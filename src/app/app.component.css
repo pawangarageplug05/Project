@@ -1,0 +1,9 @@
+.container{
+    overflow: hidden;
+}
+img{
+    border:  1ps solid yellow;
+}
+img.hover{
+    border: 2px solid #5B4D47;
+}

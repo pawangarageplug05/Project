@@ -1,0 +1,58 @@
+<div class="container">
+
+  
+
+<h3 style="background-color:skyblue;margin-top:0%;color:white;font-weight: 300;text-align: center;border-radius: 5px;"><clr-icon shape="new" size="40"></clr-icon>India News</h3>
+    <br>
+    <div class="clr-row" *ngFor="let us of type" >
+        <div class="clr-col-6">
+            <span>{{us}}</span>
+        </div>
+       
+       
+    </div>
+<clr-dropdown [clrCloseMenuOnItemClick]="false">
+ 
+  <button type="button" clrDropdownTrigger>
+   
+     <p style="border:1px solid skyblue;border-radius: 10px;font-weight: 500;width:200px;margin-left: 10px;">Select News <clr-icon shape="caret down"></clr-icon></p>
+  </button>
+  <clr-dropdown-menu *clrIfOpen>
+      <label class="dropdown-header">Select News</label>
+      <button type="button" clrDropdownItem (click)="goSports()">Sports</button>
+      <button type="button" clrDropdownItem (click)="goBusiness()">Business</button>
+      <button type="button" clrDropdownItem (click)="goScience()">Science</button>
+      <button type="button" clrDropdownItem (click)="goEnter()">Entertainment</button>
+      <button type="button" clrDropdownItem (click)="goTech()">Technology</button>
+
+
+
+      <div class="dropdown-divider"></div>
+      
+  </clr-dropdown-menu>
+</clr-dropdown>
+
+<div class="clr-row" *ngFor="let user of users.articles">
+    <div class="clr-col-lg-12">
+        <div class="card">
+            
+            <div class="card-block">
+                <div class="card-title">
+                    {{user.title}}
+                    
+                </div>
+                <div class="card-text" >
+                  
+                 <a href="{{user.urlToImage}}"> <img src="{{user.urlToImage}}" style="width:auto;height:150px ;border:1px solid skyblue;border-radius: 10px;" target="new"></a>
+                  <p style="text-align: left">Publish Date :{{user.publishedAt}}</p>
+                  <p text-wrap style="font-weight: 300"> Description : {{user.description}}</p>
+                  <h4>Content : {{user.content}}</h4>
+                  <a href="{{user.url}}" style="justify-content: right"><button class="btn btn-primary">Visit Websites</button></a>
+                </div>
+            </div>
+          
+        </div>
+    </div>
+</div>
+</div>
+<router-outlet></router-outlet>
